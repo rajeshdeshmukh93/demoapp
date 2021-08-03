@@ -1,0 +1,31 @@
+
+  <button class="btn btn-primary" (click)="getdata()"> GetAllEmp</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <button class="btn btn-primary" (click)="addEmp()">Add Employee</button> 
+  <!-- </hr> -->
+  
+  <div class="container" *ngIf="showTable">
+    <h2>Employee Table</h2>
+
+    <body>
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Office</th>
+            <th>Salary</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+
+        <!-- <body> -->
+        <tr *ngFor="let emp of employess">
+          <td>{{emp.name}}</td>
+          <td>{{emp.office}}</td>
+          <td>{{emp.salary}}</td>
+          <td><button (click)="delete(emp)">Delete</button> </td>
+          <td><button (click)="update(emp)">Update</button> </td>
+        </tr>
+        <!-- </body> -->
+      </table>
+    </body>
+  </div>
